@@ -8,7 +8,7 @@ class JokeService {
     try {
       final response = await dio.get(
         'https://v2.jokeapi.dev/joke/Any',
-        queryParameters: {'amount': 5},
+        queryParameters: {'amount': 5, 'blacklistFlags':"nsfw,religious,political,racist,sexist,explicit"},
       );
 
       if (response.statusCode == 200) {

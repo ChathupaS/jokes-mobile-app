@@ -1,16 +1,19 @@
 class Joke {
+  final String? category;
+  final String? type;
+  final String? joke;
   final String? setup;
   final String? delivery;
-  final String? joke;
 
-  Joke({this.setup, this.delivery, this.joke});
-
+  Joke({this.category, this.type, this.joke, this.setup, this.delivery});
   // Factory method to create a Joke object from JSON
   factory Joke.fromJson(Map<String, dynamic> json) {
     return Joke(
+      category: json['category'],
+      type: json['type'],
+      joke: json['joke'],
       setup: json['setup'],
       delivery: json['delivery'],
-      joke: json['joke'],
     );
   }
 }
